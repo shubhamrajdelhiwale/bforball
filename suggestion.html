@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding Wala - Share Your Coding Journey</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="includes.js"></script>
+  <script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+  
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Header -->
+<div id="header-container"></div>
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+
+      // After header is loaded
+      setTimeout(() => {
+        // Toggle hamburger menu
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+
+        // ✅ Now call updateAuthUI here
+        if (typeof updateAuthUI === "function") {
+          updateAuthUI();
+        } else {
+          console.error("updateAuthUI is not defined");
+        }
+      }, 50); // slightly delayed to ensure DOM is ready
+    });
+</script>
+<script src="includes.js"></script>
+
+
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-black z-40 w-full border-b backdrop-blur-xl h-[52px]">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+</header>
+
+<!-- pull to refresh  -->
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+
+  <div class="max-w-3xl mx-auto p-7 bg-white shadow-lg  ">
+    <h1 class="text-2xl font-extrabold mb-2 text-center">We Value Your Suggestions!</h1>
+    <p class="text-center text-gray-600 mb-6">Help us improve Coding Wala by sharing your thoughts, feature ideas, or any issues.</p>
+
+    <form id="suggestionForm" class="space-y-4 font-bold">
+      <div>
+        <label class="block  mb-1 font-extrabold">Your Name</label>
+        <input type="text" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your name" />
+      </div>
+
+      <div>
+        <label class="block  mb-1 font-extrabold">Email</label>
+        <input type="email" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" />
+      </div>
+
+      <div>
+        <label class="block   mb-1 font-extrabold">Suggestion Type</label>
+        <select class="w-1xl px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option>Feature Request</option>
+          <option>Bug Report</option>
+          <option>General Feedback</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block  mb-1 font-extrabold">Your Suggestion</label>
+        <textarea rows="5" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Type your suggestion here..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition duration-300">
+        <i class="fas fa-paper-plane mr-2"></i>Submit Suggestion
+      </button>
+
+      <!-- Success Message (hidden by default) -->
+      <div id="successMsg" class="hidden text-green-600 text-center font-semibold mt-4">
+        ✅ Thank you! Your suggestion has been submitted.
+      </div>
+    </form>
+  </div>
+
+  <footer class="text-center mt-5 mb-15 text-sm text-gray-600">
+    <p>Connect with us:</p>
+    <div class="flex justify-center space-x-4 mt-2">
+      <a href="#" class="text-blue-600 hover:text-blue-800"><i class="fab fa-facebook text-xl"></i></a>
+      <a href="#" class="text-sky-500 hover:text-sky-700"><i class="fab fa-twitter text-xl"></i></a>
+      <a href="#" class="text-pink-600 hover:text-pink-800"><i class="fab fa-instagram text-xl"></i></a>
+      <a href="#" class="text-blue-700 hover:text-blue-900"><i class="fab fa-linkedin text-xl"></i></a>
+    </div>
+    <p class="mt-3">&copy; 2025 Coding Wala. All rights reserved.</p>
+  </footer>
+
+ <script src="includes.js"></script>
+</body>
+</html>

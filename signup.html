@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up - Coding Wala</title>
+  <script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+  <link href="output.css" rel="stylesheet">
+  <script src="includes.js" defer></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <div id="header-container"></div>
+
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header-container").innerHTML = data;
+        setTimeout(() => {
+          document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+            document.getElementById("mobile-menu")?.classList.toggle("hidden");
+          });
+        }, 0);
+      });
+  </script>
+
+  <!-- false header -->
+  <header class="sticky top-0 left-0 bg-black z-40 w-full border-b backdrop-blur-xl h-[52px]">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- intentionally left empty -->
+    </div>
+  </header>
+
+  <!-- pull to refresh -->
+  <div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+    <span class="text-sm font-extrabold">Refreshing...</span>
+  </div>
+
+  <main>
+    <div class="min-h-[92vh] bg-[url('./imagebg.jpg')] bg-cover bg-center flex items-center justify-center pb-6 px-10">
+      <div class="border-2 border-white rounded-2xl backdrop-blur-sm bg-white/20 shadow-2xl max-w-md w-full p-2  space-y-6">
+        <h2 class="text-3xl font-bold text-center text-blue-9500">Create an Account</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-lg font-bold text-black">Full Name</label>
+            <input type="email" placeholder="Shubham Raj"
+              class="mt-1 block w-full text-lg font-bold px-4 py-1 border-2 rounded-md focus:outline-none focus:ring-2 bg-white focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-lg font-bold text-black">Email</label>
+            <input type="email" placeholder="you@example.com"
+              class="mt-1 block w-full text-lg font-bold px-4 py-2 border-2 rounded-md focus:outline-none focus:ring-2 bg-white focus:ring-blue-500" />
+          </div>
+          <div>
+            <label class="block text-lg text-black font-bold">Password</label>
+            <input type="password" placeholder="••••••••"
+              class="mt-1 block bg-white text-lg font-bold w-full px-4 py-2 border-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          </div>
+          <button type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white text-2xl font-bold py-2 rounded-lg transition">
+            Sign Up
+          </button>
+        </form>
+
+        <!-- Google Sign-In Button -->
+        <div id="g_id_onload" data-client_id="111073321705-7fdbfh9n6c5k4j91luurshs6dhvqvq1s.apps.googleusercontent.com"
+          data-callback="handleCredentialResponse" data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" data-text="sign_up_with"
+          data-shape="rectangular" data-logo_alignment="left">
+        </div>
+
+
+        <p class="text-1xl font-extrabold text-center text-black">
+          Already have an account?
+          <a href="login.html" class="text-blue-950 text-2xl font-bold hover:underline">Login</a>
+        </p>
+      </div>
+
+      <script src="https://accounts.google.com/gsi/client" async defer></script>
+      <script src="includes.js"></script>
+  </main>
+
+  <div id="pullDownIndicator" class="hidden fixed top-[73px] left-0 right-0 z-50 flex justify-center items-center bg-black text-yellow-300 py-2">
+    <span class="text-sm font-semibold">Refreshing...</span>
+  </div>
+
+  <!-- Footer -->
+  <div data-include="footer.html"></div>
+  <div id="bottomNavContainer"></div>
+</body>
+
+</html>

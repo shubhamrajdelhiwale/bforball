@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Coding Wala</title>
+  <link rel="stylesheet" href="output.css" />
+<script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-blue-200 text-gray-900">
+ <!-- Header Here -->
+<!-- Include Header Here (same as Home) -->
+     <div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+      setTimeout(() => {
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+      }, 0);
+    });
+</script>
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-white z-40 w-full border-b backdrop-blur-xl h-[47px]">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+</header>
+
+<!-- pull to refresh  -->
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+  <!-- Add nav with links to all pages as shown above -->
+<h2 class="text-3xl text-black text-center w-full bg-yellow-300 font-bold  pb-2 mb-2">Featured Projects</h2>
+  <main class="max-w-7xl mx-auto px-2 pb-11 py-4 ">
+    
+    <!-- You can paste your project cards here -->
+    <div class="max-w-md mx-auto">
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Project Card -->
+        <div class="bg-white p-4 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold text-gray-800">AI Resume Analyzer</h2>
+          <p class="text-gray-600 mt-2">Uses NLP to analyze and improve your resume based on job descriptions.</p>
+          <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+              <span>👍 124</span>
+              <span>👁️ 2.4k</span>
+              <span>💬 18</span>
+            </div>
+            <div class="text-yellow-500">⭐ 4.5/5</div>
+          </div>
+        </div>
+
+        <!-- Repeat Project Card -->
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold text-gray-800">E-commerce Admin Dashboard</h2>
+          <p class="text-gray-600 mt-2">Interactive dashboard with analytics, order management and reports.</p>
+          <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+              <span>👍 89</span>
+              <span>👁️ 1.1k</span>
+              <span>💬 7</span>
+            </div>
+            <div class="text-yellow-500">⭐ 4.2/5</div>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-md p-5 hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition duration-300 space-y-2">
+          <h3 class="text-xl font-semibold text-gray-800 hover:text-purple-600 transition">Hackathon Finalist</h3>
+          <p class="text-gray-600 text-sm">Secured top 5 position in a national-level AI Hackathon 2024.</p>
+          <div class="flex items-center justify-between text-sm text-gray-500 mt-2">
+            <span>⭐ 4.8</span>
+            <span>👁️ 3.2k views</span>
+            <span>💬 145 comments</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold text-gray-800">Weather Forecast App</h2>
+          <p class="text-gray-600 mt-2">Real-time weather app using OpenWeatherMap API and Tailwind UI.</p>
+          <div class="flex items-center justify-between mt-4 text-sm text-gray-500">
+            <div class="flex items-center gap-2">
+              <span>👍 65</span>
+              <span>👁️ 980</span>
+              <span>💬 10</span>
+            </div>
+            <div class="text-yellow-500">⭐ 4.0/5</div>
+          </div>
+        </div>
+
+        <!--  more cards here -->
+        <!-- 21 Project Cards Below -->
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">AI Resume Analyzer</h2>
+          <p class="text-gray-600 mt-2">Uses NLP to improve your resume based on job roles.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 124 👁️ 2.4k 💬 18</span><span class="text-yellow-500">⭐ 4.5</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">E-commerce Admin Dashboard</h2>
+          <p class="text-gray-600 mt-2">Track sales, users, and reports in real-time.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 89 👁️ 1.1k 💬 7</span><span class="text-yellow-500">⭐ 4.2</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Weather Forecast App</h2>
+          <p class="text-gray-600 mt-2">Real-time weather data using OpenWeatherMap API.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 65 👁️ 980 💬 10</span><span class="text-yellow-500">⭐ 4.0</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Crypto Tracker</h2>
+          <p class="text-gray-600 mt-2">Track live crypto prices and trends globally.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 72 👁️ 1.3k 💬 14</span><span class="text-yellow-500">⭐ 4.4</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Online Quiz App</h2>
+          <p class="text-gray-600 mt-2">MCQ quizzes with timer, leaderboard, and scores.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 58 👁️ 800 💬 6</span><span class="text-yellow-500">⭐ 3.9</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Portfolio Website</h2>
+          <p class="text-gray-600 mt-2">Responsive personal portfolio with projects and contact.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 120 👁️ 2.2k 💬 11</span><span class="text-yellow-500">⭐ 4.8</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Fitness Tracker</h2>
+          <p class="text-gray-600 mt-2">Tracks workouts, diet, and calories using charts.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 90 👁️ 1.5k 💬 8</span><span class="text-yellow-500">⭐ 4.3</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Expense Manager</h2>
+          <p class="text-gray-600 mt-2">Manage personal finances and monthly budgets.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 77 👁️ 1.1k 💬 5</span><span class="text-yellow-500">⭐ 4.1</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Chat Application</h2>
+          <p class="text-gray-600 mt-2">Real-time chat with Socket.io and Node.js backend.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 110 👁️ 2.0k 💬 25</span><span class="text-yellow-500">⭐ 4.6</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Food Delivery UI</h2>
+          <p class="text-gray-600 mt-2">Frontend UI clone of Swiggy/Zomato with Tailwind.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 102 👁️ 1.9k 💬 12</span><span class="text-yellow-500">⭐ 4.4</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Blog Platform</h2>
+          <p class="text-gray-600 mt-2">Create, edit, and publish blogs with markdown support.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 91 👁️ 1.6k 💬 9</span><span class="text-yellow-500">⭐ 4.2</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Netflix Clone</h2>
+          <p class="text-gray-600 mt-2">React-based UI for streaming layout and trailers.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 134 👁️ 3.1k 💬 16</span><span class="text-yellow-500">⭐ 4.7</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Task Management Tool</h2>
+          <p class="text-gray-600 mt-2">Kanban-style task manager with drag-and-drop.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 85 👁️ 1.4k 💬 6</span><span class="text-yellow-500">⭐ 4.0</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Online Code Editor</h2>
+          <p class="text-gray-600 mt-2">Supports HTML/CSS/JS with live preview.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 99 👁️ 2.2k 💬 14</span><span class="text-yellow-500">⭐ 4.5</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Language Translator</h2>
+          <p class="text-gray-600 mt-2">Translate text between 50+ languages using API.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 66 👁️ 1.0k 💬 4</span><span class="text-yellow-500">⭐ 3.8</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Online Voting System</h2>
+          <p class="text-gray-600 mt-2">Secure voting system with admin and user panels.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 82 👁️ 1.3k 💬 9</span><span class="text-yellow-500">⭐ 4.3</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Library Management</h2>
+          <p class="text-gray-600 mt-2">Manage books, members, and issue records.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 70 👁️ 1.2k 💬 5</span><span class="text-yellow-500">⭐ 4.1</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Movie Search App</h2>
+          <p class="text-gray-600 mt-2">Search movies using OMDB API with responsive UI.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 87 👁️ 1.5k 💬 6</span><span class="text-yellow-500">⭐ 4.2</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Job Listing Board</h2>
+          <p class="text-gray-600 mt-2">Browse jobs with filters and easy application flow.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 95 👁️ 1.7k 💬 7</span><span class="text-yellow-500">⭐ 4.4</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-5 rounded-2xl shadow hover:drop-shadow-[0_0_5px_rgba(255,0,0.6)] transition">
+          <h2 class="text-xl font-semibold">Note Taking App</h2>
+          <p class="text-gray-600 mt-2">Simple and clean notes app with dark mode support.</p>
+          <div class="flex justify-between mt-4 text-sm text-gray-500">
+            <span>👍 78 👁️ 1.2k 💬 3</span><span class="text-yellow-500">⭐ 4.0</span>
+          </div>
+        </div>
+
+        <!-- cards ends here  -->
+
+      </div>
+    </div>
+    <p class="text-center max-[370px]:hidden font-bold text-4xl py-10 text-blue-950">More Coming soon...</p>
+  </main>
+
+
+
+
+  <!-- Include Footer Here (same as Home) -->
+
+  <!-- Footer -->
+
+
+  
+  <div data-include="footer.html"></div>
+  <script src="includes.js"></script>
+<!-- pull down indicator  -->
+  <div id="pullDownIndicator" class="hidden fixed top-[73px] left-0 right-0 z-50 flex justify-center items-center bg-black text-yellow-300 py-2">
+  <span class="text-sm font-semibold">Refreshing...</span>
+</div>
+<!-- bottom nav  -->
+ <div id="bottomNavContainer"></div>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile - Coding Wala</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="includes.js"></script>
+  <script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+  
+</head>
+<body class="bg-gray-100 font-sans">
+<div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+      setTimeout(() => {
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+      }, 0);
+    });
+</script>
+
+
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-black z-40 w-full border-b backdrop-blur-xl h-[46px]">
+  <div class="max-w-md mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+</header>
+
+
+<!-- pull to refresh  -->
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+
+
+
+<!-- <div class="hidden" id="only-logged-in"> -->
+  <!-- Profile Header -->
+  <main ><div class="bg-white shadow-md  p-5  text-center">
+    <img src="https://media.licdn.com/dms/image/v2/D5603AQE3OpNqtinDUg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1695640286217?e=1756339200&v=beta&t=gBlQE8pCz2XFuNBIwFmCG2U9Nge_f_1ibzsW8MJXfAw" class="mx-auto w-20 h-20 rounded-full object-cover border-4 border-red-600" alt=""/>
+    <h2 class="mt-4 text-xl font-bold text-gray-800">Shubham Raj</h2>
+    <p class="text-sm text-gray-600">Founder of Coding Wala | CSE(AI)</p>
+    <button class="mt-3 px-4 py-1 text-sm bg-red-600 text-white rounded-full hover:bg-red-700">Edit Profile</button>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="flex justify-around bg-white py-4 text-center shadow-sm mt-1">
+    <div>
+      <div class="text-xl font-bold text-red-600">32</div>
+      <div class="text-sm text-gray-600">Posts</div>
+    </div>
+    <div>
+      <div class="text-xl font-bold text-red-600">128</div>
+      <div class="text-sm text-gray-600">Followers</div>
+    </div>
+    <div>
+      <div class="text-xl font-bold text-red-600">12</div>
+      <div class="text-sm text-gray-600">Communities</div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="mt-6 px-4">
+    <div class="flex space-x-4 justify-center text-sm font-semibold">
+      <button class="tab-btn active-tab text-red-600 border-b-2 border-red-600 pb-1" data-tab="posts">Posts</button>
+      <button class="tab-btn text-gray-600 pb-1" data-tab="communities">Communities</button>
+      
+      <button class="tab-btn text-gray-600 pb-1" data-tab="achievements">Achievements</button>
+    </div>
+    <!-- Replace inside <div id="tab-posts"> -->
+<div id="tab-posts" class="tab-content">
+  <div class="space-y-4">
+    <!-- Post Card 1 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <h3 class="text-md font-bold text-gray-800 mb-1">🎯 Just completed 100 Days of Code!</h3>
+      <p class="text-sm text-gray-600">It was tough but rewarding. Learned React, Firebase, and deployed my portfolio!</p>
+      <div class="text-xs text-gray-500 mt-2">Posted 3 days ago</div>
+    </div>
+
+    <!-- Post Card 2 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <h3 class="text-md font-bold text-gray-800 mb-1">🚀 Launched my Startup MVP</h3>
+      <p class="text-sm text-gray-600">Built a marketplace for college freelancers using HTML/CSS + Firebase auth.</p>
+      <div class="text-xs text-gray-500 mt-2">Posted 1 week ago</div>
+    </div>
+  </div>
+</div>
+  </div>
+
+  <!-- Tab Contents -->
+  <div class="p-4">
+    <div id="tab-posts" class="tab-content">
+      <p class="text-gray-700">User's shared posts will appear here.</p>
+    </div>
+    <div id="tab-communities" class="tab-content hidden">
+        
+      <p class="text-gray-700">User's joined communities will appear here.</p>
+    </div>
+    <div id="tab-achievements" class="tab-content hidden">
+      <p class="text-gray-700">User's achievements will appear here.</p>
+    </div>
+    
+  </div>
+
+
+<!-- <div id="login-required" class=" flex items-center justify-center   bg-yellow-300">
+  <div class="bg-white rounded-2xl shadow-xl p-10 mt-35 mb-35 max-w-md w-full text-center border border-gray-300">
+    <i class="fa-solid fa-circle-exclamation text-red-500 text-4xl mb-4"></i>
+    <h2 class="text-2xl font-semibold mb-2">Please Login to Access</h2>
+    <p class="text-gray-600 mb-6">This page is only available for logged-in users. It’s totally free.</p>
+    <a href="signin.html" class="inline-block bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+      Login Now
+    </a>
+  </div>
+</div> -->
+<!-- Optional loading message
+<div id="loading" class="text-center p-4">
+  <p>Checking login status...</p>
+</div> -->
+</main>
+  <!-- Footer -->
+  <!-- Footer -->
+<div data-include="footer.html"></div>
+</body>
+</html>
