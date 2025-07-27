@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community - Coding Wale</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="includes.js" defer></script>
+  <script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="bg-blue-200 text-gray-900">
+  
+  <!-- Header -->
+  <!-- Header -->
+   <div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+      setTimeout(() => {
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+      }, 0);
+    });
+</script>
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-white z-40 w-full  backdrop-blur-xl h-[49px]">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+</header>
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+  <main class="max-w-7xl mx-auto pb-10 py-1">
+    <!-- <h1 class="text-4xl font-bold mb-8 text-center">Developer Community</h1>
+    <p class="text-center text-gray-600 mb-4">Meet, learn, and collaborate with fellow developers!</p>
+    <p class="text-center text-sm text-gray-400">Community forums and events coming soon.</p> -->
+
+    <div class="flex flex-col md:flex-row w-full max-w-7xl mx-auto gap-4 px-1 py-1">
+  <!-- Left Sidebar -->
+  <div class="md:w-1/3 space-y-6">
+    <!-- Create Community -->
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h2 class="font-bold text-lg mb-4 text-blue-800">Create Community</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Community Name" class="w-full border p-2 rounded-md text-sm" />
+        <textarea placeholder="Description" class="w-full border p-2 rounded-md text-sm"></textarea>
+        <select class="w-full border p-2 rounded-md text-sm">
+          <option value="public">Public</option>
+          <option value="private">Private</option>
+        </select>
+        <input type="text" placeholder="Purpose / Goal" class="w-full border p-2 rounded-md text-sm" />
+        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm">+ Create</button>
+      </form>
+    </div>
+
+    <!-- My Communities -->
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h2 class="font-bold text-lg text-blue-800 mb-2">My Communities</h2>
+      <ul class="text-sm text-gray-700 space-y-1">
+        <li>#AI_Lovers</li>
+        <li>#WebBuilders</li>
+        <li>#JavaGeeks</li>
+        <li>#DevTalks</li>
+      </ul>
+    </div>
+
+    <!-- People to Follow -->
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h2 class="font-bold text-lg text-blue-800 mb-2">People to Follow</h2>
+      <ul class="text-sm text-gray-700 space-y-3">
+        <li class="flex items-center justify-between">
+          <span>👩‍💻 Neha Sinha</span><button class="text-blue-600 text-xs">Follow</button>
+        </li>
+        <li class="flex items-center justify-between">
+          <span>🧑‍💻 Rahul Mehta</span><button class="text-blue-600 text-xs">Follow</button>
+        </li>
+        <li class="flex items-center justify-between">
+          <span>👨‍🎓 Arjun Verma</span><button class="text-blue-600 text-xs">Follow</button>
+        </li>
+        <li class="flex items-center justify-between">
+          <span>🧑‍🔧 Priya Kapoor</span><button class="text-blue-600 text-xs">Follow</button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Daily Coding Challenge -->
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h2 class="font-bold text-lg text-blue-800 mb-2">Daily Coding Challenge</h2>
+      <p class="text-sm text-gray-700">"Given a string s, return the longest palindromic substring in s."</p>
+      <button class="text-blue-500 text-sm mt-2 hover:underline">Try Now →</button>
+    </div>
+  </div>
+
+  <!-- Right Main Content -->
+  <div class="md:w-2/3 space-y-6">
+    <!-- Discover Communities -->
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h2 class="font-bold text-xl text-blue-800 mb-4">Discover Communities</h2>
+      <!-- Community Cards -->
+      <div class="space-y-4">
+        <div class="flex items-center p-4 border rounded-lg gap-4">
+          <img src="https://img.icons8.com/color/48/code.png" class="w-10 h-10" alt="Code" />
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold">Frontend Wizards</h3>
+            <p class="text-sm text-gray-600">React, Vue & Tailwind lovers unite.</p>
+            <span class="text-xs text-gray-500">342 Members</span>
+          </div>
+          <button class="text-blue-600 hover:underline text-sm">Join</button>
+        </div>
+
+        <div class="flex items-center p-4 border rounded-lg gap-4">
+          <img src="https://img.icons8.com/color/48/artificial-intelligence.png" class="w-10 h-10" alt="AI" />
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold">AI Innovators</h3>
+            <p class="text-sm text-gray-600">Discuss GPTs, ML models & AI apps.</p>
+            <span class="text-xs text-gray-500">1.2k Members</span>
+          </div>
+          <button class="text-blue-600 hover:underline text-sm">Join</button>
+        </div>
+
+        <div class="flex items-center p-4 border rounded-lg gap-4">
+          <img src="https://img.icons8.com/color/48/html-5--v1.png" class="w-10 h-10" alt="HTML" />
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold">Web Dev Hub</h3>
+            <p class="text-sm text-gray-600">HTML, CSS, JavaScript mastery space.</p>
+            <span class="text-xs text-gray-500">987 Members</span>
+          </div>
+          <button class="text-blue-600 hover:underline text-sm">Join</button>
+        </div>
+
+        <div class="flex items-center p-4 border rounded-lg gap-4">
+          <img src="https://img.icons8.com/color/48/github--v1.png" class="w-10 h-10" alt="GitHub" />
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold">Open Source Squad</h3>
+            <p class="text-sm text-gray-600">Collaborate on real-world GitHub repos.</p>
+            <span class="text-xs text-gray-500">600+ Members</span>
+          </div>
+          <button class="text-blue-600 hover:underline text-sm">Join</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Preview -->
+    <div class="bg-white p-4 rounded-xl shadow">
+      <h2 class="font-bold text-xl text-blue-800 mb-4">Community Chat Preview</h2>
+      <div class="space-y-3 text-sm text-gray-800">
+        <div class="bg-gray-100 p-2 rounded">Neha: Hey, did you guys solve the challenge?</div>
+        <div class="bg-gray-100 p-2 rounded">Arjun: Working on the palindrome one, almost done!</div>
+        <div class="bg-gray-100 p-2 rounded">Rahul: Anyone using GPT to brainstorm ideas?</div>
+        <div class="bg-gray-100 p-2 rounded">Priya: Just posted a new resource for AI devs 🔥</div>
+        <div class="bg-gray-100 p-2 rounded">Shubham: Remember to star our repo on GitHub ⭐</div>
+      </div>
+      <button class="text-blue-600 text-sm mt-2 hover:underline">Open Full Chat →</button>
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <!-- Footer -->
+        <div data-include="footer.html"></div>
+        <!-- Footer -->
+
+   <script src="include.js" defer></script>
+   <div id="pullDownIndicator" class="hidden fixed top-[73px] left-0 right-0 z-50 flex justify-center items-center bg-black text-yellow-300 py-2">
+  <span class="text-sm font-semibold">Refreshing...</span>
+  </div>
+
+
+<!-- bottom nav  -->
+ <div id="bottomNavContainer"></div>
+</body>
+</html>

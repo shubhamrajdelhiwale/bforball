@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact – Coding Wala</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="includes.js"></script>
+  <script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+</head>
+<body class="bg-cyan-100 text-gray-800">
+  <!-- Header -->
+<div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+
+      // After header is loaded
+      setTimeout(() => {
+        // Toggle hamburger menu
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+
+        // ✅ Now call updateAuthUI here
+        if (typeof updateAuthUI === "function") {
+          updateAuthUI();
+        } else {
+          console.error("updateAuthUI is not defined");
+        }
+      }, 50); // slightly delayed to ensure DOM is ready
+    });
+</script>
+<script src="includes.js"></script>
+
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-black z-40 w-full border-b backdrop-blur-xl h-[52px]">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+</header>
+
+<!-- pull to refresh  -->
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+  <!-- 🧭 Main Container -->
+  <main class="max-w-5xl bg-cyan-100 mx-auto pt-8">
+
+    <!-- 🔵 Header -->
+    <header class="text-center mb-7">
+      <img src="https://media.licdn.com/dms/image/v2/D5622AQFAaK9rtT_aww/feedshare-shrink_800/B56ZhBlbBpH0Ag-/0/1753446987239?e=1756339200&v=beta&t=639Qc9iemr7LVrFquAt0r_NV_4JPSI59CayxUJd1BTQ" alt="Coding Wala Logo"
+           class="mx-auto w-74 h-20  shadow-md  mb-4">
+      <h1 class="text-4xl font-bold text-blue-700">Contact Us</h1>
+      <p class="text-black font-bold mt-2">We’d love to connect and hear from you!</p>
+    </header>
+
+    <!-- 🧾 Contact Card -->
+    <section class="bg-lime-100  shadow-xl p-8 pb-17 space-y-10">
+
+      <!-- 👤 Founder + 🏢 Company -->
+      <div class="grid md:grid-cols-2 mb-8 gap-6">
+        <!-- Founder -->
+        <div>
+          <h2 class="flex items-center text-xl font-semibold mb-4">
+            <i class="fa-solid fa-user-tie text-blue-600 mr-2"></i> Founder
+          </h2>
+          <div class="flex items-center gap-4">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQE3OpNqtinDUg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1695640286217?e=1756339200&v=beta&t=gBlQE8pCz2XFuNBIwFmCG2U9Nge_f_1ibzsW8MJXfAw" alt="Shubham Raj"
+                 class="w-16 h-16 rounded-full object-cover ring-2 ring-blue-500/20">
+            <div class="text-sm">
+              <p class="font-semibold text-lg">Shubham Raj</p>
+              <p class="text-gray-500">Founder & Developer</p>
+              <p class="mt-1 text-sm">
+                <i class="fa-solid fa-envelope text-red-500 mr-1"></i>
+                <a href="mailto:shubham@codingwala.com" class="text-blue-600 underline">shubhamrajdelhiwale@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h2 class="flex items-center text-xl font-semibold mb-4">
+            <i class="fa-solid fa-building text-blue-600 mr-2"></i> Company
+          </h2>
+          <ul class="text-sm space-y-2">
+            <li><span class="font-semibold">Name :</span>   Coding Wala</li>
+            <li><span class="font-semibold">Industry :</span>   IT & Software Tools</li>
+            <li><span class="font-semibold">Website :</span> <a href="https://shubhamrajdelhiwale.github.io/Coding-Wala" class="text-blue-600 underline">codingwala.com</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 📍 Location -->
+      <div>
+        <h2 class="flex items-center text-xl font-semibold mb-3">
+          <i class="fa-solid fa-location-dot text-blue-600 mr-2"></i> Location
+        </h2>
+        <p class="text-sm mb-2">Noida, Uttar Pradesh, India</p>
+        <div class="rounded-lg overflow-hidden shadow-md">
+          <iframe
+            class="w-full h-60"
+            frameborder="0"
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBmUPksv7uSb9jKINrkobJb5k5XilgAiz4&q=noida,uttar pradesh,India"
+            allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- 🔗 Social Links -->
+      <div>
+        <h2 class="flex items-center text-xl font-semibold mb-3">
+          <i class="fa-solid fa-share-nodes text-blue-600 mr-2"></i> Social Media
+        </h2>
+        <div class="flex gap-4 text-2xl">
+          <a href="https://www.linkedin.com/company/coding-wala/" target="_blank" class="text-blue-700 hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/shubhamrajdelhiwale" target="_blank" class="text-black hover:scale-110 transition"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/company/coding-wala/" target="_blank" class="text-blue-400 hover:scale-110 transition"><i class="fab fa-twitter"></i></a>
+          <a href="mailto:shubhamrajdelhiwale@gmail.com" class="text-red-500 hover:scale-110 transition"><i class="fas fa-envelope"></i></a>
+          <a href="#" target="_blank" class="text-red-600 hover:scale-110 transition"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- 💬 WhatsApp -->
+      <div class="text-center">
+        <a href="https://wa.me/918588805255?text=Hi%20Coding%20Wala%20Team!" target="_blank"
+           class="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-full font-medium text-lg shadow-md transition">
+          <i class="fab fa-whatsapp text-xl"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🟢 Floating WhatsApp Button -->
+  <a href="https://wa.me/918588805255" target="_blank"
+     class="fixed bottom-16 right-10 bg-green-500 hover:bg-green-600 text-white w-25 h-25 rounded-full flex items-center justify-center shadow-lg transition"
+     aria-label="WhatsApp">
+    <i class="fab fa-whatsapp text-7xl"></i>
+  </a>
+
+</body>
+</html>

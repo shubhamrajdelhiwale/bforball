@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Achievements - Coding Wale</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="includes.js" defer></script>
+<script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script><!-- clickable buttons short js alpine.js  -->
+
+  <style>
+    /* Optional: Style the scroll */
+    /* For Webkit-based browsers (Chrome, Safari) */
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 3px;
+    }
+
+    .custom-scroll::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
+  </style>
+</head>
+
+<body class="bg-blue-50 text-gray-900">
+  <!-- Header Here -->
+<!-- Include Header Here (same as Home) -->
+     <div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+      setTimeout(() => {
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+      }, 0);
+    });
+</script>
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-white z-40 w-full border-b backdrop-blur-xl h-[47px]">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+  
+</header>
+
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+
+  <main class="max-w-8xl bg-cyan-200 mx-auto  pb-5">
+    <!-- Page Heading -->
+    <!-- <div class="text-center py-10 px-4">
+      <h1 class="text-4xl font-bold text-blue-900 mb-4">Coding Wala Achievements</h1>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Discover and celebrate the success stories of coders from our vibrant Coding Wala community. Explore their
+        achievements, milestones, and moments of pride. 🎉
+      </p>
+    </div> -->
+
+    <!-- Main Layout with Side Panels -->
+
+
+
+    <div class="w-full flex justify-center  lg:px-16 ">
+      <!-- Left Sidebar -->
+      <!-- <aside class="hidden  lg:block lg:w-1/5 pr-4 space-y-6">
+        <div class="bg-white p-4  shadow-sm">
+          <h2 class="font-bold text-blue-800 mb-2">#Trending</h2>
+          <ul class="text-sm space-y-1 text-gray-600">
+            <li>#CodingWala</li>
+            <li>#JavaScript</li>
+            <li>#100DaysOfCode</li>
+            <li>#LinkedInConnect</li>
+            <li>#Achievements</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4  shadow-sm">
+          <h2 class="font-bold text-blue-800 mb-2">Quote 💡</h2>
+          <p class="text-sm italic text-gray-700">
+            “Code is like humor. When you have to explain it, it’s bad.”
+          </p>
+        </div>
+
+        <div class="bg-white p-4  shadow-sm">
+  <h2 class="font-bold text-blue-800 mb-3">👥 People to Follow</h2>
+  <div class="space-y-3 text-sm">
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img src="https://randomuser.me/api/portraits/men/1.jpg" class="w-8 h-8 rounded-full" />
+        <div>
+          <p class="font-medium">Aman Verma</p>
+          <p class="text-gray-500 text-xs">Frontend Dev</p>
+        </div>
+      </div>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Follow</button>
+    </div>
+
+    <div class="flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <img src="https://randomuser.me/api/portraits/women/2.jpg" class="w-8 h-8 rounded-full" />
+        <div>
+          <p class="font-medium">Neha Gupta</p>
+          <p class="text-gray-500 text-xs">AI/ML Engineer</p>
+        </div>
+      </div>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Follow</button>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white p-3   shadow-sm">
+  <h2 class="font-bold text-blue-800 mb-2">📄 Pages to Follow</h2>
+  <ul class="text-sm text-gray-700 space-y-2">
+    <li class="flex justify-between">
+      <span>Coding Wala</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Follow</button>
+    </li>
+    <li class="flex justify-between">
+      <span>CodeBurst</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Follow</button>
+    </li>
+    <li class="flex justify-between">
+      <span>TechWithTim</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Follow</button>
+    </li>
+    <li class="flex justify-between">
+      <span>Google Developers</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Follow</button>
+    </li>
+  </ul>
+</div>
+
+      </aside> -->
+
+      <!-- main scrollable content  -->
+      <div
+        class="w-[100%]  max-w-2xl h-[90vh]     space-y-6 overflow-y-auto pb-10 custom-scroll">
+<div class="bg-white p-4  shadow-sm mb-3  mx-0">
+  <div class="flex items-center space-x-3">
+    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile" class="w-10 h-10 rounded-full object-cover">
+    <input type="text" placeholder="Start a post" class="flex-1 bg-gray-100 rounded-full px-4 py-2 focus:outline-none" />
+  </div>
+  <div class="flex justify-around mt-4 text-sm text-gray-600">
+    <button class="flex items-center space-x-1 hover:text-green-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 1 1 0 16A8 8 0 0 1 10 2Zm1 4.5a1 1 0 1 0-2 0v2.586l-1.707 1.707a1 1 0 0 0 1.414 1.414L10 10.414V6.5Z"/></svg>
+      <span>Video</span>
+    </button>
+    <button class="flex items-center space-x-1 hover:text-blue-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M21 3H3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1ZM4 17.586 8.586 13l3.707 3.707 5-5L20 18H4v-.414ZM20 17l-3.5-4.5-4.5 4.5-3.5-3.5L4 17V5h16v12Z"/></svg>
+      <span>Photo</span>
+    </button>
+    <button class="flex items-center space-x-1 hover:text-orange-600">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 0 1 2-2h3v2H5v14h14v-3h2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5Zm6 4h10V7H9v2Zm0 4h10v-2H9v2Zm0 4h6v-2H9v2Z"/></svg>
+      <span>Write article</span>
+    </button>
+  </div>
+</div>
+
+
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white  max-h-[600px] shadow-md border border-gray-300 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://media.licdn.com/dms/image/v2/D5603AQE3OpNqtinDUg/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695640286217?e=1756339200&v=beta&t=bMsM6v2VrFP2txAEMfDb4pOI8uz3UvVuTx9MrFZEEaU" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQGNcVgFZcEKTg/feedshare-shrink_800/B56ZZO5aGQGoAg-/0/1745080396744?e=1756339200&v=beta&t=vZbL5H5audBVrBwM1nzR2-zoYbHrf9bPRNPAOTw6vHU" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 max-h-[350px] w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+
+            <!-- clickable buttons short js alpine.js  -->
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }"
+              class="flex space-x-4 text-gray-500 text-sm">
+              <button @click="likeCount++" class="hover:text-blue-500">👍 Like <span x-text="likeCount"></span></button>
+              <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span
+                  x-text="celebrateCount"></span></button>
+              <button @click="inspireCount++" class="hover:text-pink-500">💖 Inspire <span
+                  x-text="inspireCount"></span></button>
+            </div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQF14xbc7bLfeA/profile-displayphoto-scale_400_400/B4DZgXK_o2HwAk-/0/1752735417027?e=1756339200&v=beta&t=m3YwNzYr43Ro1zfLqKYFKTUAGHrkCQelLg99kNZM5Sg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Sachin Gupta</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://media.licdn.com/dms/image/v2/D5622AQFc5PSVWidkAw/feedshare-shrink_800/B56ZXiEhz9GoAg-/0/1743254597689?e=1756339200&v=beta&t=ZOrB1Iy_xXnOHCZ9U63eTHA4L17zQHtSyRN_m0Gi7rI" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://media.licdn.com/dms/image/v2/D4D03AQF7VXVSxCf7mg/profile-displayphoto-scale_400_400/B4DZedPguVGkAg-/0/1750689780611?e=1756339200&v=beta&t=f-dkI3w7E263RmXfpX5EF59kODq1uRCs-XFuBJgS26o" class="w-12 h-12 rounded-full object-cover"/>
+            <div>
+              <h3 class="font-semibold text-lg">Priyanshu Patel</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://media.licdn.com/dms/image/v2/D4D22AQEPe-Zo9HGroQ/feedshare-shrink_800/B4DZZwyRYMGgAk-/0/1745648999938?e=1756339200&v=beta&t=T3brRKsQlmo1o-HKwLbakPpzAcdlORCduVzTJDcjzJY"
+            class="rounded-lg border border-gray-300 mt-2 w-full" alt="#"/>
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+        <!-- Post 1: Shubham Raj -->
+        <div class="bg-white
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Shubham Raj</h3>
+              <p class="text-sm text-gray-500">Full Stack Developer @Coding Wala</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Just launched the brand new <strong>"Coding Wala"</strong> community portal! 🚀
+            Aimed at celebrating coder achievements with feeds, connections, and more!
+          </p>
+          <img src="https://miro.medium.com/v2/resize:fit:631/1*WS0z0e2je2PH7XkxLzjyVw.jpeg" alt="Coding Wala Launch"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#CodingWala</span>
+            <span>#FullStack</span>
+            <span>#CommunityLaunch</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/shubhamraj" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="bg-yellow-100
+  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Neha Sharma</h3>
+              <p class="text-sm text-gray-500">AI Intern @TCS | Final Year Student</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            Successfully completed my 6-month AI internship at <strong>TCS</strong>! Grateful for the mentorship and
+            real-world ML exposure. 💼
+          </p>
+          <img src="https://cdn.glitch.com/3d283e0f-19c4-4546-b0b2-223ec3a7dc23%2Foverview.jpg?v=1565769230316" class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#Internship</span>
+            <span>#MachineLearning</span>
+            <span>#TCS</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/nehasharma" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="bg-red-200  shadow-md border border-gray-200 p-6 space-y-4">
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/90.jpg" class="w-12 h-12 rounded-full object-cover" />
+            <div>
+              <h3 class="font-semibold text-lg">Rohit Singh</h3>
+              <p class="text-sm text-gray-500">Final Year @IIT Delhi | GATE 2025 Topper</p>
+            </div>
+          </div>
+          <p class="text-gray-700">
+            I'm thrilled to share that I secured <strong>AIR 122 in GATE 2025</strong>! 💪
+            Thanks to my mentors, peers, and family for their unwavering support.
+          </p>
+          <img src="https://i.ytimg.com/vi/VwVg9jCtqaU/maxresdefault.jpg"
+            class="rounded-lg border border-gray-300 mt-2 w-full" />
+          <div class="flex flex-wrap text-blue-600 text-sm mt-2 gap-2">
+            <span>#GATE2025</span>
+            <span>#AIR122</span>
+            <span>#IITDelhi</span>
+          </div>
+          <div class="flex justify-between items-center mt-4">
+            <div x-data="{ likeCount: 0, celebrateCount: 0, inspireCount: 0 }" class="flex space-x-4 text-gray-500 text-sm">
+  <button @click="likeCount++" class="hover:text-blue-500">❤️ Like <span x-text="likeCount"></span></button>
+  <button @click="celebrateCount++" class="hover:text-green-500">🎉 Celebrate <span x-text="celebrateCount"></span></button>
+  <button @click="inspireCount++" class="hover:text-pink-500">🌟 Inspire <span x-text="inspireCount"></span></button>
+</div>
+
+            <a href="https://linkedin.com/in/rohitsingh" target="_blank"
+              class="bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700 text-sm">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <!-- Right Sidebar -->
+      <aside class="hidden lg:block lg:w-1/5 pl-4 space-y-6">
+        <div class="bg-white p-4  shadow-sm">
+          <h2 class="font-bold text-blue-800 mb-2">Top Achievers 🏆</h2>
+          <ul class="text-sm text-gray-600 space-y-1">
+            <li>Shubham Raj</li>
+            <li>Neha Sharma</li>
+            <li>Rohit Mehta</li>
+          </ul>
+        </div>
+        <div class="bg-white p-4  shadow-sm">
+          <h2 class="font-bold text-blue-800 mb-2">Connect 💬</h2>
+          <p class="text-sm text-gray-700">Join our Telegram or Discord to connect with 5k+ coders.</p>
+        </div>
+
+        <div class="bg-white p-4  shadow-sm">
+  <h2 class="font-bold text-blue-800 mb-3">🧑‍🤝‍🧑 Groups to Join</h2>
+  <ul class="text-sm text-gray-700 space-y-2">
+    <li class="flex justify-between">
+      <span>#AI Enthusiasts</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Join</button>
+    </li>
+    <li class="flex justify-between">
+      <span>#FullStack Warriors</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Join</button>
+    </li>
+    <li class="flex justify-between">
+      <span>#Hackathon Hub</span>
+      <button class="text-blue-600 text-xs font-semibold hover:underline">Join</button>
+    </li>
+  </ul>
+</div>
+<div class="bg-white p-4  shadow-sm">
+  <h2 class="font-bold text-blue-800 mb-3">📘 Daily Coding Challenge</h2>
+  <div class="space-y-1 text-sm">
+    <p class="text-gray-700 font-medium">Q: Find the First Non-Repeating Character</p>
+    <p class="text-gray-500">Level: <span class="text-yellow-600 font-semibold">Medium</span></p>
+    <p class="text-gray-500">Tag: <span class="text-indigo-600">#Strings</span></p>
+  </div>
+  <button class="mt-3 w-full bg-green-600 text-white text-xs py-1.5 rounded hover:bg-green-700 transition">
+    Solve Now →
+  </button>
+</div>
+
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <!-- Include Footer -->
+  <div data-include="footer.html"></div> <!-- Footer -->
+
+
+
+
+
+
+
+<!-- bottom nav  -->
+ <div id="bottomNavContainer"></div>
+</body>
+
+</html>

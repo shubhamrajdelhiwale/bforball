@@ -1,0 +1,157 @@
+<!-- Include Header Here (same as Home) -->
+
+<header class=" fixed top-0 bg-black z-50 w-full   ">
+  
+  <div class="max-w-full  mx-auto px-1 py-2 flex content-center justify-between">
+
+    <!-- Logo Section -->
+    <div class="flex items-center space-x-2">
+      <!-- Logo Box -->
+      <div class="w-8 h-6 bg-white rounded-lg flex items-center justify-center text-red-800 font-extrabold">
+        <span>CW</span>
+      </div>
+      <!-- Logo Text -->
+      <h1 class="text-2xl  font-bold">
+        <a href="index.html"
+          class="text-transparent bg-clip-text bg-white ">
+          Co<span class="text-transparent bg-clip-text bg-yellow-300">di</span><span class="text-transparent bg-clip-text bg-red-500">ng</span><span class="text-transparent bg-clip-text bg-white"> W</span><span class="text-transparent bg-clip-text bg-yellow-300">al</span><span class="text-transparent bg-clip-text bg-red-500">a</span>
+          
+      </h1>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden text-xl lg:flex font-bold   items-center space-x-8 ">
+      <a href="project.html"
+        class="text-white hover:text-blue-500 transition duration-300 ease-in-out hover:underline ">
+        Projects
+      </a>
+
+      <a href="achievements.html"
+        class="text-white hover:text-blue-500 transition duration-300 ease-in-out hover:underline">
+        Achievements
+      </a>
+
+      <a href="community.html"
+        class="text-white hover:text-blue-500 transition duration-300 ease-in-out hover:underline">
+        Community
+      </a>
+
+      <div ><a href="about.html" class="text-white hover:text-blue-500 transition duration-300 ease-in-out hover:underline">
+        Startup
+      </a></div>
+    </nav>
+<div class="flex items-center space-x-2">
+<a href="Profile.html" id="profileBtn" class="show-if-logged-in hidden text-2xl">
+  <button class="flex items-center justify-center text-2xl">
+    <i class="fa-solid fa-circle-user" style="color: #FFD43B;"></i>
+  </button>
+</a>
+
+
+    <!-- Action Buttons -->
+    
+      <!-- Sign In Button -->
+      <!-- Sign In Button -->
+      <!-- Mobile icon button (visible only on screens < sm) -->
+      
+
+      <!-- Full text button (visible only on sm and up) -->
+      <a href="login.html" class=" ">
+        <button id="signInBtn"
+          class=" hover:drop-shadow-[100_100_155px_rgba(255,2,2,0.9)] text-1xl px-2 pb-0.5 border border-cyan-600 rounded  text-black font-extrabold bg-blue-100 ">
+          Sign In
+        </button>
+      </a>
+
+
+      <!-- Logout Button -->
+      <button id="logoutBtn"
+        class="flex items-center justify-center  text-2xl rounded hover:bg-green-400 transition"
+        onclick="logout()">
+        <i class="fa-solid fa-right-to-bracket" style="color: #FFD43B;"></i>
+      </button>
+
+
+
+
+
+      <button
+        class="hidden sm:flex text-sm hover:drop-shadow-[0_0_5px_rgba(5,254,218,0.9)] px-4 py-2 bg-gradient-to-r from-yellow-200 to-purple-300  text-black font-bold rounded shadow  transition duration-300">
+        <a href="https://forms.gle/Vb5tneX3kxjq5hGbA">Share Project</a>
+      </button>
+
+      <!-- Hamburger Menu: Visible below md -->
+      <div class="lg:hidden relative z-50">
+        <!-- Toggle Button -->
+        <button id="hamburger-btn" class="flex flex-col gap-1 p-1 focus:outline-none">
+          <span class="w-8 h-1 bg-white transition-all"></span>
+          <span class="w-8 h-1 bg-white transition-all"></span>
+          <span class="w-8 h-1 bg-white transition-all"></span>
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="mobile-menu"
+          class="absolute top-11 left-1/2 transform -translate-x-1/2 w-[70vw] max-w-[500px] md:max-w-[400px] lg:max-w-[300px] bg-black border border-white rounded-xl shadow-lg p-6 hidden flex flex-col gap-5 text-white text-lg font-semibold z-50 min-h-[350px]">
+
+          <a href="index.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-house"
+              style="color: #FFD43B;"></i> Home</a>
+          <a href="project.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-folder-open"
+              style="color: #FFD43B;"></i> Projects</a>
+          <a href="achievements.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-trophy"
+              style="color: #FFD43B;"></i> Achievements</a>
+          <a href="community.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-people-line"
+              style="color: #FFD43B;"></i> Community</a>
+          <a href="startups.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-business-time"
+              style="color: #FFD43B;"></i> Startups</a>
+          <a href="suggestion.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-comments"
+              style="color: #FFD43B;"></i> suggestion</a>
+          <a href="contactus.html" class="hover:text-yellow-300 transition"><i class="fa-solid fa-phone"
+              style="color: #FFD43B;"></i> Contact</a>
+        </div>
+
+
+</div>
+
+
+
+
+      </div>
+    </div>
+  
+
+</header>
+
+
+<!-- bottomnav.html -->
+<div class="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-black  shadow-md">
+  <div class="flex justify-around items-center py-1.5">
+
+    <a href="index.html" class="flex flex-col items-center text-gray-700 hover:text-blue-600">
+      <i class="fa-solid fa-house text-xl" style="color: #FFD43B;"></i>
+      <span class="text-xs text-yellow-300">Home</span>
+    </a>
+
+    <a href="project.html" class="flex flex-col items-center text-gray-700 hover:text-blue-600">
+      <i class="fa-solid text-xl fa-folder-open"
+              style="color: #FFD43B;"></i>
+      <span class="text-xs text-yellow-300">Projects</span>
+    </a>
+
+    <a href="startups.html" class="flex flex-col items-center text-gray-700 hover:text-blue-600">
+      <i class="fa-solid fa-rocket text-xl" style="color: #FFD43B;"></i>
+      <span class="text-xs text-yellow-300">Startup</span>
+    </a>
+
+    <a href="community.html" class="flex flex-col items-center text-gray-700 hover:text-blue-600">
+      <i class="fa-solid text-xl fa-comment"
+              style="color: #FFD43B;"></i>
+      <span class="text-xs text-yellow-300">Community</span>
+    </a>
+
+    <a href="Profile.html" class="flex flex-col items-center text-gray-700 hover:text-blue-600">
+      <i class="fa-solid fa-user text-xl" style="color: #FFD43B;"></i>
+      <span class="text-xs text-yellow-300">Profile</span>
+    </a>
+
+  </div>
+</div>

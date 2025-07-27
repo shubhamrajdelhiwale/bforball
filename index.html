@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coding Wala - Share Your Coding Journey</title>
+  <link rel="stylesheet" href="output.css" />
+  <script src="includes.js"></script>
+  <script src="https://kit.fontawesome.com/5964b3059a.js" crossorigin="anonymous"></script>
+  
+</head>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header -->
+<div id="header-container"></div>
+
+<script>
+  fetch("header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("header-container").innerHTML = data;
+      setTimeout(() => {
+        document.getElementById("hamburger-btn")?.addEventListener("click", () => {
+          document.getElementById("mobile-menu")?.classList.toggle("hidden");
+        });
+      }, 0);
+    });
+</script>
+
+
+  <!-- false header  -->
+<header class="sticky top-0 left-0 bg-black z-40 w-full border-b backdrop-blur-xl h-[52px]">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- intentionally left empty -->
+  </div>
+</header>
+
+<!-- pull to refresh  -->
+<div id="pullDownIndicator" class="hidden w-full bg-white text-blue-950 py-2 text-center z-40">
+  <span class="text-sm font-extrabold">Refreshing...</span>
+</div>
+
+  <section class="relative bg-gradient-to-br from-blue-600 to-purple-700 text-white py-10">
+  <!-- Background Effects -->
+  <div class="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,_rgba(255,255,255,0.1)_0%,_transparent_70%)]"></div>
+  <div class="absolute top-24 left-1/4 w-40 h-40 bg-purple-400/20 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-24 right-1/4 w-72 h-72 bg-blue-400/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
+  <!-- Content Wrapper -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 text-center">
+    <!-- Top Tag -->
+    <div class="inline-flex items-center space-x-2 bg-white/10 border border-white/20 rounded-full px-5 py-2 mb-6 backdrop-blur-sm">
+      <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+      <span class="text-sm">Showcase • Celebrate • Connect</span>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6">
+      Share Your<br />
+      <span class="bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent">
+        Coding Journey
+      </span>
+    </h1>
+
+    <!-- Subtext -->
+    <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed">
+      Join <strong>Coding Wala</strong> — where developers showcase projects, celebrate achievements, 
+      and build connections that matter.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="flex flex-col sm:flex-row justify-center gap-4 mb-10">
+      <button class="bg-white  text-blue-700 font-semibold px-6 py-3 rounded-lg hover:drop-shadow-[0_0_10px_rgba(205,254,2,0.7)] transition-all duration-300 shadow">
+        <a href="https://forms.gle/4kfxxm76yaxJTtfi6" target="-blank">🚀 Start Sharing</a>
+      </button>
+      <button class="border bg-blue-400 hover:drop-shadow-[0_0_10px_rgba(5,254,218,0.9)]  border-white text-white px-6 py-3 rounded-lg ">
+        <a href="project.html">👥 Explore Projects</a>
+      </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="flex flex-wrap justify-center gap-6 text-sm text-white/80">
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 bg-yellow-300 rounded-full animate-pulse"></span>
+        <span>1000+ Projects</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 bg-pink-300 rounded-full animate-pulse delay-300"></span>
+        <span>500+ Developers</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="w-2 h-2 bg-green-300 rounded-full animate-pulse delay-700"></span>
+        <span>250+ Success Stories</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Projects Section --> <section id="projects" class="py-10 bg-cyan-200">
+  <!-- Container matches header: max width + horizontal padding -->
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center space-x-2 bg-white backdrop-blur-sm border border-gray-300 rounded-full px-6 py-3 mb-4 ">
+        <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+        <span class="text-sm  text-gray-600   ">Featured Projects</span>
+      </div>
+      <h2 class="text-4xl font-bold mb-4">
+        Discover Amazing
+        <span class="block bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent">Coding Projects</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Explore innovative projects built by our talented community. Get inspired, learn new techniques, and connect with fellow developers.
+      </p>
+    </div>
+
+    <!-- Projects grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
+      <!-- Example Project Card -->
+            <!-- Card 1 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 hover:drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Smart Expense Tracker</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          AI-powered expense tracking app with automatic categorization and insightful spending analysis. Features beautiful charts and budgeting tools.
+        </p>
+        <p class="text-sm text-gray-500 mb-2">👨‍💻 Rahul Gupta</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-3">
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Vue.js</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Python</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">AI</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>👁 892</span>
+          <span>💬 15</span>
+          <span>⭐ 4.6</span>
+          <span>👍 89</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 hover:drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Code Syntax Highlighter</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Lightning-fast syntax highlighter library supporting 50+ programming languages with customizable themes and plugins.
+        </p>
+        <p class="text-sm text-gray-500 mb-2">👨‍💻 Ankit Verma</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-3">
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">JavaScript</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Library</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Open Source</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>👁 2103</span>
+          <span>💬 31</span>
+          <span>⭐ 4.9</span>
+          <span>👍 156</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 hover:drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Real-time Chat Dashboard</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Modern chat application with real-time messaging, file sharing, and team collaboration features. Built for scalability.
+        </p>
+        <p class="text-sm text-gray-500 mb-2">👩‍💻 Sneha Patel</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-3">
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Node.js</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Socket.io</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">React</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>👁 1847</span>
+          <span>💬 42</span>
+          <span>⭐ 4.7</span>
+          <span>👍 203</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 hover:drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Crypto Portfolio Tracker</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Comprehensive cryptocurrency portfolio management tool with price alerts, news integration, and advanced analytics.
+        </p>
+        <p class="text-sm text-gray-500 mb-2">👨‍💻 Vikram Singh</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-3">
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Next.js</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Crypto API</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Charts</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>👁 1456</span>
+          <span>💬 28</span>
+          <span>⭐ 4.5</span>
+          <span>👍 178</span>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 hover:drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Weather Forecast Widget</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Beautiful and accurate weather widget with location-based forecasts, interactive maps, and customizable themes.
+        </p>
+        <p class="text-sm text-gray-500 mb-2">👩‍💻 Kavita Mehta</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-3">
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">JavaScript</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">Weather API</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">CSS3</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>👁 734</span>
+          <span>💬 12</span>
+          <span>⭐ 4.4</span>
+          <span>👍 67</span>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white border border-gray-200 rounded-xl p-6 hover:drop-shadow-[0_0_7px_rgba(0,0,0,0.7)]">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">Neural Network Visualizer</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Interactive web app to visualize how neural networks learn and make decisions. Built with React and D3.js.
+        </p>
+        <p class="text-sm text-gray-500 mb-2">👩‍💻 Priya Sharma</p>
+        <div class="flex flex-wrap gap-2 text-xs mb-3">
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">React</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">D3.js</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">ML</span>
+          <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded">TypeScript</span>
+        </div>
+        <div class="flex justify-between text-xs text-gray-500">
+          <span>👁 1205</span>
+          <span>💬 23</span>
+          <span>⭐ 4.8</span>
+          <span>👍 124</span>
+        </div>
+      </div>
+
+      <!-- Repeat cards here with the same styles -->
+    </div>
+
+    <!-- Button -->
+    <div class="text-center mt-12">
+      <button class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-lg font-medium shadow hover:shadow-lg transition duration-300">
+        <a href="project.html">View All Projects</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="achievements" class="py-15 bg-gray-300">
+  <div class="max-w-7xl   mx-auto px-4">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center space-x-2 bg-white/50 backdrop-blur-sm border border-gray-300 rounded-full px-6 py-3 mb-6">
+        <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+        <span class="text-sm text-gray-600">Success Stories</span>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+        Celebrate Your
+        <span class="block bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+          Coding Wins
+        </span>
+      </h2>
+
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Every milestone matters! Share your achievements, inspire others, 
+        and build your professional reputation in the developer community.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Achievement Card 1 -->
+      <div class="bg-white border border-gray-300 rounded-lg p-6 shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,255,0,0.9)] transition-shadow duration-300">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold">
+            🏆
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">1000+ GitHub Stars! 🌟</h3>
+            <p class="text-sm text-gray-600 mb-1">My open-source React component library just hit 1000 stars on GitHub! Thank you to the amazing developer community for your support.</p>
+            <p class="text-xs text-gray-500">Arjun Kumar • 2 hours ago • <span class="inline-block bg-blue-100 text-blue-600 text-xs px-2 py-0.5 rounded-full">Open Source</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat similar blocks for other achievements -->
+      
+      <!-- Achievement Card 2 -->
+      <div class="bg-white border border-gray-300 rounded-lg p-6 shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,255,0,0.9)] transition-shadow duration-300">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-purple-500 to-pink-600 flex items-center justify-center text-white text-xl font-bold">
+            🏆
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Won Best Innovation Award 🏆</h3>
+            <p class="text-sm text-gray-600 mb-1">Our team's AI-powered code review tool won the Best Innovation Award at TechCrunch Hackathon. Proud of what we built in just 48 hours!</p>
+            <p class="text-xs text-gray-500">Team CodeGenius • 1 day ago • <span class="inline-block bg-purple-100 text-purple-600 text-xs px-2 py-0.5 rounded-full">Hackathon</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Continue similarly for other achievements -->
+
+      
+      <!-- Card 3 -->
+      <div class="bg-white border border-gray-300 rounded-lg p-6 shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,255,0,0.9)] transition-shadow duration-300">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-white text-xl font-bold">
+            🚀
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Featured on Product Hunt 🚀</h3>
+            <p class="text-sm text-gray-600 mb-1">My productivity app for developers got featured as #2 Product of the Day on Product Hunt! The feedback has been incredible.</p>
+            <p class="text-xs text-gray-500">Neha Agarwal • 3 days ago • <span class="inline-block bg-yellow-100 text-yellow-600 text-xs px-2 py-0.5 rounded-full">Product Launch</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-white border border-gray-300 rounded-lg p-6 shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,255,0,0.9)] transition-shadow duration-300">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-green-400 to-teal-500 flex items-center justify-center text-white text-xl font-bold">
+            ⚡
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Completed 100 Day Coding Challenge ⚡</h3>
+            <p class="text-sm text-gray-600 mb-1">Just finished my 100 Days of Code challenge! Built 15 projects, learned 3 new frameworks, and made amazing connections.</p>
+            <p class="text-xs text-gray-500">Rohit Sharma • 1 week ago • <span class="inline-block bg-green-100 text-green-600 text-xs px-2 py-0.5 rounded-full">Personal Growth</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-white border border-gray-300 rounded-lg p-6 shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,255,0,0.9)] transition-shadow duration-300">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-indigo-500 to-blue-700 flex items-center justify-center text-white text-xl font-bold">
+            📈
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Promoted to Senior Developer 📈</h3>
+            <p class="text-sm text-gray-600 mb-1">Excited to share that I've been promoted to Senior Full Stack Developer! Thank you to my team and mentors for believing in me.</p>
+            <p class="text-xs text-gray-500">Pooja Singh • 2 weeks ago • <span class="inline-block bg-indigo-100 text-indigo-600 text-xs px-2 py-0.5 rounded-full">Career</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-white border border-gray-300 rounded-lg p-6 shadow-sm hover:drop-shadow-[0_0_10px_rgba(255,255,0,0.9)] transition-shadow duration-300">
+        <div class="flex items-center space-x-4 mb-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-teal-500 to-cyan-600 flex items-center justify-center text-white text-xl font-bold">
+            🎯
+          </div>
+          <div class="flex-1">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">Open Source Contribution Milestone 🎯</h3>
+            <p class="text-sm text-gray-600 mb-1">Made my 500th contribution to open source projects this year! It's been an incredible journey of learning and giving back.</p>
+            <p class="text-xs text-gray-500">Dev Patel • 2 weeks ago • <span class="inline-block bg-teal-100 text-teal-600 text-xs px-2 py-0.5 rounded-full">Open Source</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="bg-gradient-to-r from-purple-600 to-blue-500 hover:shadow-lg text-white px-8 py-3 rounded-lg font-medium transition-all duration-300">
+        <a href="https://forms.gle/wrBCtsSNDuRPwza68">Share Your Achievement</a>
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Footer -->
+<div data-include="footer.html"></div>
+  <div id="bottomNavContainer"></div>
+</body>
+</html>
